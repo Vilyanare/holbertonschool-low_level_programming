@@ -12,7 +12,7 @@ int main(void)
 	long long int longlonginttype;
 
 	printf("Size of a char: %ld byte(s)\n", sizeof(chartype));
-	printf("Size of int: %ld byte(s)\n", sizeof(integertype));
+	printf("Size of an int: %ld byte(s)\n", sizeof(integertype));
 	printf("Size of a long int: %ld byte(s)\n", sizeof(longinttype));
 	printf("Size of a long long int: %ld byte(s)\n", sizeof(longlonginttype));
 	printf("Size of a float: %ld byte(s)\n", sizeof(floattype));
