@@ -1,5 +1,8 @@
 #include<stdio.h>
-
+/**
+ *main - displays the size of different data types
+ *Return: returns nothing
+ */
 int main(void)
 {
 	int integertype;
