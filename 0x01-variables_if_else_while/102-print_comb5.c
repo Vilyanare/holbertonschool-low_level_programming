@@ -1,41 +1,33 @@
 #include<stdio.h>
 /**
- * main - print unique combo of 2 groups of 2 digit numbers
- *(00 01, 01 00, 10 00, are not unique)
+ *main - print 2 groups of 2 digits as long as they are unique
+ *(01 00, and 00 01 are not unique
  *Return: always 0
  */
 int main(void)
 {
-    int ch, ch2, ch3, ch4;
+	int j, k;
 
-    for (ch = 48; ch <= 57; ch++)
-    {
-	for (ch2 = 48; ch2 <= 57; ch2++)
+	for (j = 0; j <= 99; j++)
 	{
-	    for (ch3 = 48; ch3 <= 57; ch3++)
-	    {
-		for (ch4 = 48; ch4 <= 57; ch4++)
+		for (k = 0; k <= 99; k++)
 		{
-		    if (ch4 >= ch2 && ch3 >= ch)
-		    {
-			if (ch4 != ch2 || ch3 != ch)
+			if (k > j)
 			{
-			    putchar(ch);
-			    putchar(ch2);
-			    putchar(' ');
-			    putchar(ch3);
-			    putchar(ch4);
-			    if (ch != 57 || ch2 != 56 || ch3 != 57 || ch4 != 57)
-			    {
-				putchar(',');
+				putchar(j / 10 + 48);
+				putchar(j % 10 + 48);
 				putchar(' ');
-			    }
+				putchar(k / 10 + 48);
+				putchar(k % 10 + 48);
+
+				if (j != 98 || k != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-		    }
 		}
-	    }
 	}
-    }
-    putchar('\n');
-    return (0);
+	putchar('\n');
+	return (0);
 }
