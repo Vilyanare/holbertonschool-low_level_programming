@@ -1,6 +1,7 @@
 #include<stdio.h>
 /**
- *main - print all unique combo of 3 digits (201 210 012 102 etc are not unique)
+ *main - print all unique combo of 3 digits (201 210 012 102 etc are not
+ *unique)
  *Return: always 0
  */
 int main(void)
@@ -15,19 +16,15 @@ int main(void)
 		{
 			for (ch3 = 48; ch3 <= 57; ch3++)
 			{
-				if (ch3 > ch2)
+				if (ch3 > ch2 && ch2 > ch)
 				{
-					if (ch2 > ch)
+					putchar(ch);
+					putchar(ch2);
+					putchar(ch3);
+					if (ch != 55 || ch2 != 56 || ch3 != 57)
 					{
-						putchar(ch);
-						putchar(ch2);
-						putchar(ch3);
-						if (ch != 55 || ch2 != 56 ||
-						    ch3 != 57)
-						{
-							putchar(',');
-							putchar(' ');
-						}
+						putchar(',');
+						putchar(' ');
 					}
 				}
 			}
