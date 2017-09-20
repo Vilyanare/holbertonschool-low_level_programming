@@ -1,8 +1,6 @@
 #include"holberton.h"
 /**
- *print_to_98 - print all numbers from n to 98
  *commaspace - put a comma and space if number doesn't = 98
- *@n: starting number to print from
  *@x: number for commaspace
  *Return: void
  */
@@ -14,7 +12,11 @@ void commaspace(int x)
 		_putchar(' ');
 	}
 }
-
+/**
+ *print_to_98 - Print all numbers from n to 98
+ *@n: starting number to print from
+ *Return: void
+ */
 void print_to_98(int n)
 {
 	int count, x;
