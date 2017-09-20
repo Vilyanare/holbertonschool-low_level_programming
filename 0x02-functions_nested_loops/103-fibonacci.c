@@ -7,6 +7,7 @@ int main(void)
 {
 	long int a, b, c, hold;
 
+	hold = 0;
 	a = 1;
 	b = 2;
 	c = 0;
