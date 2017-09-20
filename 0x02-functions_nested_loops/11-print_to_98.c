@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include"holberton.h"
 /**
  *print_to_98 - Print all numbers from n to 98
@@ -13,7 +14,8 @@ void print_to_98(int n)
 	{
 		for (count = n; count >= 98; count--)
 		{
-			printf("%d", n);
+			x = count;
+			printf("%d", x);
 			if (n != 98)
 				printf(", ");
 		}
@@ -23,7 +25,8 @@ void print_to_98(int n)
 	{
 		for (count = n; count <= 98; count++)
 		{
-			printf("%d", n);
+			x = count;
+			printf("%d", x);
 			if (n != 98)
 				printf(", ");
 		}
