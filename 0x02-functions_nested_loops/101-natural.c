@@ -10,18 +10,22 @@ int main(void)
 
 	count = 0;
 	x = 0;
+	five = 0;
+	three = 0;
 
-	while (count < 1023)
+	while (count < 1024)
 	{
 		count = 5 * x;
 		five += count;
 		x++;
 	}
 	x = 0;
-	while (count < 1023)
+	count = 0;
+	while (count < 1024)
 	{
 		count = 3 * x;
-		three += count;
+		if (count % 5 != 0)
+			three += count;
 		x++;
 	}
 	printf("%d\n", three + five);
