@@ -13,21 +13,23 @@ int main(void)
 	five = 0;
 	three = 0;
 
-	while (count < 1024)
+	while (count < 1020)
 	{
 		count = 5 * x;
 		five += count;
 		x++;
 	}
+	printf("%d\n", count);
 	x = 0;
 	count = 0;
-	while (count < 1024)
+	while (count < 1023)
 	{
 		count = 3 * x;
 		if (count % 5 != 0)
 			three += count;
 		x++;
 	}
+	printf("%d\n", count);
 	printf("%d\n", three + five);
 	return (0);
 }
