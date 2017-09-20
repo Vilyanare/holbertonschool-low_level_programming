@@ -50,5 +50,5 @@ void print_to_98(int n)
 			commaspace(x);
 		}
 	}
-	putchar('\n');
+	_putchar('\n');
 }
