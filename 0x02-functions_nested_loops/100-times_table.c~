@@ -8,7 +8,7 @@ void print_times_table(int n)
 {
 	int x, y, product;
 
-	if (n >= 0 && n < 16)
+	if (n > 0 && n < 16)
 	{
 		for (x = 0; x <= n; x++)
 		{
@@ -18,14 +18,31 @@ void print_times_table(int n)
 				if (y != 0)
 				{
 					if (product / 1000 > 0)
-						put_digit(4, product);
+					{
+						_putchar(put_digit(4, product));
+						_putchar(put_digit(3, product));
+						_putchar(put_digit(2, product));
+						_putchar(put_digit(1, product));
+					}
 					else if (product / 100 > 0)
-						put_digit(3, product);
+					{
+						put_space(1);
+						_putchar(put_digit(3, product));
+						_putchar(put_digit(2, product));
+						_putchar(product % 10 + '0');
+					}
 					else if (product % 100 / 10 > 0)
-						put_digit(2, product);
+					{
+						put_space(2);
+						_putchar(put_digit(2, product));
+						_putchar(product % 10 + '0');
+					}
 					else
-						put_digit(1, product);
-					if (y < n)
+					{
+						put_space(3);
+						_putchar(product % 10 + '0');
+					}
+					if (y < 9)
 						_putchar(',');
 				}
 				else
@@ -51,36 +68,23 @@ void put_space(int x)
 		_putchar(' ');
 }
 /**
- *put_digit - prints value of specified digit place
- *@n: number of digits to print
+ *put_digit - returns ascii value of specified digit place
+ *@n: digit wanted
  *@x: number to extract digit from
  *Return: digit
  */
-void put_digit(int n, int x)
+int put_digit(int n, int x)
 {
-	int result, count, space = 4;
+	int result;
 
-	for (count = n; count >= 0; count--)
-		space--;
-	put_space(space);
 	if (n == 4)
-	{
 		result = x / 1000 + '0';
-		_putchar(result);
-	}
-	if (n >= 3)
-	{
+	else if (n == 3)
 		result = x % 1000 / 100 + '0';
-		_putchar(result);
-	}
-	if (n >= 2)
-	{
+	else if (n == 2)
 		result = x % 100 / 10 + '0';
-		_putchar(result);
-	}
-	if (n >= 1)
-	{
+	else if (n == 1)
 		result = x % 10 + '0';
-		_putchar(result);
-	}
+
+	return (result);
 }
