@@ -16,7 +16,7 @@ void print_to_98(int n)
 		{
 			x = count;
 			printf("%d", x);
-			if (n != 98)
+			if (x != 98)
 				printf(", ");
 		}
 		putchar('\n');
@@ -27,7 +27,7 @@ void print_to_98(int n)
 		{
 			x = count;
 			printf("%d", x);
-			if (n != 98)
+			if (x != 98)
 				printf(", ");
 		}
 		putchar('\n');
