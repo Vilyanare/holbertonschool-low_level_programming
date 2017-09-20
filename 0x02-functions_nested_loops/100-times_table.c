@@ -1,6 +1,6 @@
 #include"holberton.h"
 /**
- *times_table - list out all multiples of n to n
+ *print_times_table - list out all multiples of n to n
  *@n: number to be multiplied
  *Return: always void
  */
@@ -8,7 +8,7 @@ void print_times_table(int n)
 {
 	int x, y, product;
 
-	if (n > 0 && n < 16)
+	if (n >= 0 && n <= 15)
 	{
 		for (x = 0; x <= n; x++)
 		{
