@@ -11,14 +11,14 @@ int main(void)
 	count = 0;
 	x = 0;
 
-	while (count < 1024)
+	while (count < 1023)
 	{
 		count = 5 * x;
 		five += count;
 		x++;
 	}
 	x = 0;
-	while (count < 1024)
+	while (count < 1023)
 	{
 		count = 3 * x;
 		three += count;
