@@ -10,7 +10,7 @@ int main(void)
 	a = 1;
 	b = 2;
 	c = 0;
-	for (count = 0; count <= 50; count ++)
+	for (count = 0; count <= 49; count++)
 	{
 		printf("%ld", a);
 		c = a;
