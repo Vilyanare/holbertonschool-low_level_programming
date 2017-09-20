@@ -19,7 +19,6 @@ int main(void)
 		five += count;
 		x++;
 	}
-	printf("%d\n", count);
 	x = 0;
 	count = 0;
 	while (count < 1023)
@@ -29,7 +28,6 @@ int main(void)
 			three += count;
 		x++;
 	}
-	printf("%d\n", count);
 	printf("%d\n", three + five);
 	return (0);
 }
