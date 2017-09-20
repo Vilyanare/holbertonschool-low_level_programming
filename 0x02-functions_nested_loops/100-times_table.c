@@ -17,9 +17,7 @@ void print_times_table(int n)
 				product = x * y;
 				if (y != 0)
 				{
-					if (product / 1000 > 0)
-						put_digit(4, product);
-					else if (product / 100 > 0)
+    				        if (product / 100 > 0)
 						put_digit(3, product);
 					else if (product % 100 / 10 > 0)
 						put_digit(2, product);
