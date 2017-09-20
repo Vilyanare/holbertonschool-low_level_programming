@@ -8,7 +8,7 @@ void print_times_table(int n)
 {
 	int x, y, product;
 
-	if (n >= 0 && n < 16)
+	if (n > 0 && n < 16)
 	{
 		for (x = 0; x <= n; x++)
 		{
