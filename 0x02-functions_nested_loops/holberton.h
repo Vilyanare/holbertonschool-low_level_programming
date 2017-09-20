@@ -13,4 +13,7 @@ void times_table(void);
 int add(int, int);
 void print_to_98(int);
 void commaspace(int);
+void print_times_table(int);
+void put_space(int);
+void put_digit(int, int);
 #endif /* HOLBERTON_H */
