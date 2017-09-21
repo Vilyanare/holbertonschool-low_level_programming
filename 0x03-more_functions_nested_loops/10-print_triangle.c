@@ -1,4 +1,4 @@
-#include"holberton.c"
+#include"holberton.h"
 /**
  *print_triangle - prints a triangle with # characters
  *@size: how big you want the triangle to be
@@ -6,12 +6,13 @@
  */
 void print_triangle(int size)
 {
-	int x;
+	int x, y, z;
 
+	z = 0;
 	for (x = 0; x < size; x++)
 	{
-		for (y = size; y > 1; y--)
-			_putchar(' ');
+		for (y = size - z; y > 1; y--)
+		_putchar(' ');
 		for (z = 0; z <= x; z++)
 			_putchar('#');
 		_putchar('\n');
