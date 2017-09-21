@@ -1,4 +1,4 @@
-#include"holbert.h"
+#include"holberton.h"
 /**
  *mul - Multiply inputs together and return product
  *@a: input to be multiplied
