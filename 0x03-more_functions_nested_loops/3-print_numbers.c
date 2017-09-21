@@ -1,9 +1,9 @@
 #include"holberton.h"
 /**
- *print_number - print characters 0 through 9
+ *print_numbers - print characters 0 through 9
  *Return: void
  */
-void print_number(void)
+void print_numbers(void)
 {
 	int i;
 
