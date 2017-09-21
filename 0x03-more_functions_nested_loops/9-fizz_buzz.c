@@ -12,13 +12,15 @@ int main(void)
 	for (x = 1; x <= 100; x++)
 	{
 		if (x % 5 != 0 && x % 3 != 0)
-			printf("%d ", x);
+			printf("%d", x);
 		else if (x % 5 == 0 && x % 3 == 0)
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		else if (x % 5 == 0)
-			printf("Buzz ");
+			printf("Buzz");
 		else
-			printf("Fizz ");
+			printf("Fizz");
+		if (x != 100)
+			putchar(' ');
 	}
 	putchar('\n');
 	return (0);
