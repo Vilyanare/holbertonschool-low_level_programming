@@ -33,6 +33,4 @@ void print_number(int n)
 	_putchar(n % 10 + 48);
 	if (b)
 		_putchar(overflow + 48);
-	_putchar('\n');
-	return (0);
 }
