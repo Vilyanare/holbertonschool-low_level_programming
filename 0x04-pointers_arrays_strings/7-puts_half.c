@@ -6,15 +6,16 @@
  */
 void puts_half(char *str)
 {
-	int x, half, realsize;
+	int x, half, c;
 
-	realsize = sizeof(str) + 2;
-	half = realsize / 2;
-	if (!(realsize % 2))
-		half = (realsize - 1) / 2;
-	x = realsize - half;
+	for (c = 0; str[c]; c++)
+		;
+	half = c / 2;
+	if (!(c % 2))
+		half = (c - 1) / 2;
+	x = c - half;
 
-	for ( ; x <= realsize; x++)
+	for ( ; x <= c; x++)
 		_putchar(str[x - 1]);
 	_putchar('\n');
 }
