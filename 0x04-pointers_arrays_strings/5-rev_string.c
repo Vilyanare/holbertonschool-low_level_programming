@@ -13,15 +13,18 @@ void rev_string(char *s)
 	for (c = 0; s[c]; c++)
 		;
 	x = c;
-	for ( ; x > 0; x--)
+	for ( ; x >= 0; x--)
 	{
+		if (x != c)
+		{
 		temp[i] = s[x];
 		i++;
+		}
 	}
 	x = c;
 	for (i = 0 ; x > 0; x--)
 	{
-		s[i] = temp[i + 1];
+		s[i] = temp[i];
 		i++;
 	}
 }
