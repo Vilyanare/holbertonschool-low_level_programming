@@ -10,7 +10,7 @@ int _atoi(char *s)
 	int num = 0, length = 0, x = 1, f = 1, c, end, start;
 	int minus = 0, plus = 0;
 
-	while(s[length])
+	while (s[length])
 	{
 		if (s[length] == '-')
 			minus++;
@@ -31,10 +31,13 @@ int _atoi(char *s)
 	length = end - start;
 	for (c = 0; c <= length; c++)
 	{
-		num += (s[end - c] - 48) * x;
+		if (minus > plus)
+			num -= (s[end - c] - 48) * x;
+		else
+			num += (s[end - c] - 48) * x;
+		if (c == 9)
+			break;
 		x *= 10;
 	}
-	if (minus > plus)
-		num = num - num - num;
 	return (num);
 }
