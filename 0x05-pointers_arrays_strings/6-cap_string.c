@@ -11,6 +11,8 @@ char *cap_string(char *s)
 
 	for (c = 0; s[c]; c++)
 	{
+		if (c == 0)
+			s[c] -= 32;
 		if (s[c] >= 'a' && s[c] <= 'z')
 		{
 			for (x = 0; a[x]; x++)
