@@ -11,10 +11,10 @@ char *cap_string(char *s)
 
 	for (c = 0; s[c]; c++)
 	{
-		if (c == 0)
-			s[c] -= 32;
 		if (s[c] >= 'a' && s[c] <= 'z')
 		{
+			if (c == 0)
+				s[c] -= 32;
 			for (x = 0; a[x]; x++)
 			{
 				if (a[x] == s[c - 1])
