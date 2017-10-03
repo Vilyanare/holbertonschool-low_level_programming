@@ -1,4 +1,5 @@
 #include"holberton.h"
+#include<stddef.h>
 /**
  *_strstr - find an entire substring in another string then
 returns pointer to where substring started
