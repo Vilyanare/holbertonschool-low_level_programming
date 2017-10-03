@@ -1,4 +1,5 @@
 #include"holberton.h"
+#include<stdio.h>
 /**
  *print_diagsums - prints sum of diagonals on a square matrix
  *@a: 0,0 matrix address
