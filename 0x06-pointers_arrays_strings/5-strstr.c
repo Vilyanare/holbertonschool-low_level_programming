@@ -2,11 +2,11 @@
 #include<stddef.h>
 /**
  *_strstr - find an entire substring in another string then
-returns pointer to where substring started
-*@haystack: string to be searched
-*@needle: string to look for
-*Return: pointer to begining of substring or null
-*/
+ *returns pointer to where substring started
+ *@haystack: string to be searched
+ *@needle: string to look for
+ *Return: returns pointer to begining of substring or null
+ */
 char *_strstr(char *haystack, char *needle)
 {
 	int x, c, f = 0;
