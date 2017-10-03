@@ -8,6 +8,7 @@
 void print_diagsums(int *a, int size)
 {
 	int x, sum;
+	sum = 0;
 
 	for (x = 0; x < size * size; x += size + 1)
 		sum += a[x];
