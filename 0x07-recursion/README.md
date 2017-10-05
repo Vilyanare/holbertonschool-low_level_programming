@@ -1,4 +1,4 @@
-RECURSION WOO!
+<h1>RECURSION WOO!</h1>
 
 0. Print a string followed by a new line with recursion<br>
 1. Print a string in reverse using recursion<br>
