@@ -21,7 +21,7 @@ int endofstring(char *s)
 int palin(char *s, char *p)
 {
 	if (*s == *p)
-		return(palin (s + 1, p - 1));
+		return (palin(s + 1, p - 1));
 	if (s > p)
 		return (1);
 	else
