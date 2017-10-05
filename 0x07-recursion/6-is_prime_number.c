@@ -7,8 +7,6 @@
  */
 int divisor(int n, int i)
 {
-	int f = 0;
-
 	if (n % i == 0)
 		return (0);
 	if (i * 2 < n)
