@@ -8,7 +8,7 @@
 int _atoi(char *s)
 {
 	int num = 0, length = 0, x = 1, f = 1, c, end, start = -1;
-	int minus = 0, plus = 0;
+	int minus = 0;
 
 	while (s[length])
 	{
@@ -16,8 +16,6 @@ int _atoi(char *s)
 			break;
 		if (s[length] == '-')
 			minus++;
-		if (s[length] == '+')
-			plus++;
 		if (f && s[length] >= '0' && s[length] <= '9')
 		{
 			start = length;
@@ -31,7 +29,7 @@ int _atoi(char *s)
 		length = end - start;
 		for (c = 0; c <= length; c++)
 		{
-			if (minus > plus)
+			if (minus % 2 != 0)
 				num -= (s[end - c] - 48) * x;
 			else
 				num += (s[end - c] - 48) * x;
