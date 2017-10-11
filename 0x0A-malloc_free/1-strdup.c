@@ -1,4 +1,4 @@
-#include<stdlib.h>
+#include<stdlib.h>
 #include"holberton.h"
 /**
  *_strdup - copies string to new location
@@ -16,7 +16,10 @@ char *_strdup(char *str)
 		;
 	p = malloc(x * sizeof(char));
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 	for (x = 0; str[x]; x++)
 		p[x] = str[x];
 	p[x] = '\0';
