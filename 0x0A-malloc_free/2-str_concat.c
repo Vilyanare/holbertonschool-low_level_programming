@@ -28,14 +28,12 @@ char *str_concat(char *s1, char *s2)
 	{
 		if (i < x)
 		{
-			if (s1 != NULL)
-				p[i] = s1[i];
+			p[i] = s1[i];
 			i++;
 		}
 		else
 		{
-			if (s2 != NULL)
-				p[i + j] = s2[j];
+			p[i + j] = s2[j];
 			j++;
 		}
 	}
