@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include"holberton.h"
 /**
- *strlen - find length of a string
+ *_strlen - find length of a string
  *@s: string to find length of
  *Return: length of string
  */
@@ -34,7 +34,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	p = malloc((c + x + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	while (i + k < x + c + 1)
+	while (i + k < x + c)
 	{
 		if (i < x)
 		{

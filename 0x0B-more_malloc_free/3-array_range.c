@@ -15,10 +15,10 @@ int *array_range(int min, int max)
 		return (NULL);
 	c = min;
 	i = max;
-	p = malloc(sizeof p[0] * (max - min + 1));
+	p = malloc(sizeof(p[0]) * (max - min + 1));
 	if (p == NULL)
 		return (NULL);
-	for (x = 0;c <= i; x++, c++)
+	for (x = 0; c <= i; x++, c++)
 		p[x] = c;
 	return (p);
 }
