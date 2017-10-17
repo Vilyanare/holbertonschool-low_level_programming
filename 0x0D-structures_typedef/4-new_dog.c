@@ -22,6 +22,7 @@ void _strcpy(char *dest, char *src)
 int _strlen(char *s)
 {
 	int x;
+
 	for (x = 0; s[x]; x++)
 		;
 	return (x);
@@ -47,12 +48,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	temp2 = malloc(c2 * sizeof(char) + 1);
 	if (temp2 == NULL)
+	{
+		free(temp1);
 		return (NULL);
+	}
 	_strcpy(temp1, name);
 	_strcpy(temp2, owner);
 	p = malloc(sizeof(struct dog));
 	if (p == NULL)
+	{
+		free(temp1);
+		free(temp2);
 		return (NULL);
+	}
 	p->name = temp1;
 	p->age = age;
 	p->owner = temp2;
