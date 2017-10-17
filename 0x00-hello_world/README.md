@@ -1,4 +1,4 @@
-##Learning how to create c programs
+# Learning how to create c programs
 
 0. Bash script to halt gcc after preprocessing<br>
 1. Bash script to call gcc and convert source to assmebly code<br>
