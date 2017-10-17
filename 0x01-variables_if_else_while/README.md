@@ -1,4 +1,4 @@
-##Coding in c with variables, if, else, and while
+# Coding in c with variables, if, else, and while
 
 0. C program to see if a random number is positive or negative<br>
 1. C program to see if last digit of a number is greater than 5, less than 6 or 0<br>
