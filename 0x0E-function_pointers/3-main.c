@@ -12,7 +12,6 @@
   */
 int main(int argc, char *argv[])
 {
-	int (*f)(int, int);
 	int ar1, ar3;
 
 	if (argc != 4)
@@ -20,8 +19,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
-	f = (get_op_func(argv[2]));
-	if (f == NULL)
+	if (get_op_func(argv[2]) == NULL)
 	{
 		printf("Error\n");
 		return (99);
