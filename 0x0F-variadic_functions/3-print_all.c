@@ -1,6 +1,4 @@
-#include <stdarg.h>
 #include "variadic_functions.h"
-#include <stdio.h>
 /**
   *printchar - print a char
  *@prnall: char to print
