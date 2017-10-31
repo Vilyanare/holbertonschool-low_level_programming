@@ -7,12 +7,17 @@
   */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int c = listint_len(*head);
+	unsigned int len = 0;
 	unsigned int x = 1;
 	listint_t *temp = NULL;
 	listint_t *idxnode = *head;
 
-	if (c < index + 1)
+	if (*head == NULL)
+		return (-1);
+        temp = *head;
+        for (len = 1; temp->next != NULL; len++)
+                temp = temp->next;
+	if (len < index + 1)
 		return (-1);
 	for (; x < index; x++)
 		idxnode = idxnode->next;
