@@ -13,23 +13,51 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int len = 0;
 	unsigned int x = 1;
 
-	if (*head == NULL || head == NULL)
+	/*make a list if index 0 and head null*/
+	if (*head == NULL && idx == 0)
+	{
+		*head = malloc(sizeof(listint_t));
+		if (*head == NULL)
+			return (NULL);
+		(*head)->next = NULL;
+		(*head)->n = n;
+		return (*head);
+	}
+	/*check if pointers are null*/
+	if (head == NULL || *head == NULL)
 		return (NULL);
+	/*count list*/
 	temp = *head;
 	for (len = 1; temp->next != NULL; len++)
 		temp = temp->next;
+	/*if index is larger than list return null*/
 	if (len < idx + 1)
 		return (NULL);
+	/*allocate memory for new node check for fail*/
 	temp = malloc(sizeof(listint_t));
 	if (temp == NULL)
 		return (NULL);
+	/*update pointer to index location*/
 	for (; x < idx; x++)
 		idxnode = idxnode->next;
-	if (idxnode->next != NULL)
-		temp->next = idxnode->next;
-	else
+	/*if first node*/
+	if (*head == idxnode)
+	{
+		*head = temp;
+		temp->next = idxnode;
+	}
+	/*if last node*/
+	else if (idxnode->next == NULL)
+	{
 		temp->next = NULL;
-	idxnode->next = temp;
+	}
+	else
+	{
+		temp->next = idxnode->next;
+		idxnode->next = temp;
+	}
+	/*assign new node data*/
 	temp->n = n;
+	/*return address of new node*/
 	return (temp);
 }
