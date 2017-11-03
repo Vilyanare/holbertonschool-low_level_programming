@@ -21,7 +21,7 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)/*0 exception handling*/
 		_putchar('0');
-	for(; x > 0; x--)/*iterate through bits of n*/
+	for (; x > 0; x--)/*iterate through bits of n*/
 	{
 		if (chkpos(x, n))/*check for first bit with a 1*/
 			f = 1;
