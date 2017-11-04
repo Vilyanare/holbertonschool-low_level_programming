@@ -17,6 +17,9 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		checker = head;
 		check = 0;
+		printf("%d\n", printer->n);
+		count++;
+		printer = printer->next;
 		while (check < count)
 		{
 			if (checker == printer)
@@ -24,9 +27,6 @@ size_t print_listint_safe(const listint_t *head)
 			checker = checker->next;
 			check++;
 		}
-		printf("%d\n", printer->n);
-		count++;
-		printer = printer->next;
 	}
 	return (count);
 }
