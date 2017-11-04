@@ -11,7 +11,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *freep = *h;
 	listint_t *checker = *h;
 
-	while(freep)
+	while (freep)
 	{
 		checker = *h;
 		check = 0;
