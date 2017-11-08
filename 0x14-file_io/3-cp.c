@@ -37,10 +37,11 @@ void error_func(int error, ...)
 int creat_fil(char *filename)
 {
 	int fd = 0;
+	mode_t permiss = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (filename == NULL)
 		error_func(99, filename);
-	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, permiss);
 	if (fd < 0)
 		error_func(99, filename);
 	if (close(fd) < 0)
