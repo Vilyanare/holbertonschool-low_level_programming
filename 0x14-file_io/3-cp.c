@@ -6,6 +6,7 @@
 void error_func(int error, ...)
 {
 	va_list a;
+
 	va_start(a, NULL);
 	if (error == 97)
 	{
@@ -73,7 +74,7 @@ void txt_buf(char *filename, char *file2)
 		countr = read(fd1, buf, BUF_SIZE);
 		if (countr < 0)
 			error_func(98);
-		if (write (fd2, buf, countr) < 0)
+		if (write(fd2, buf, countr) < 0)
 			error_func(99);
 	} while (countr == BUF_SIZE);
 	if (close(fd1) < 0)
