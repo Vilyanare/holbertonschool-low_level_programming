@@ -79,6 +79,7 @@ void txt_buf(char *filename, char *file2)
 		error_func(100, fd1);
 	if (close(fd2) < 0)
 		error_func(100, fd2);
+	free(buf);
 
 }
 /**
@@ -98,4 +99,3 @@ int main(int argc, char **argv)
 	txt_buf(argv[1], argv[2]);
 	return (0);
 }
-
