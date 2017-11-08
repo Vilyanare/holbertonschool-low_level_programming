@@ -57,8 +57,8 @@ int creat_fil(char *filename)
  */
 void txt_buf(char *filename, char *file2)
 {
-	int fd1 = 0, fd2 = 0;
-	int countr = 0;
+	int fd1 = 0, fd2 = 0, cfd1 = 0, cfd2 = 0;
+	int countr = 0, countw = 0;
 	char *buf = NULL;
 
 	buf = malloc(sizeof(char) * BUF_SIZE);
@@ -74,13 +74,15 @@ void txt_buf(char *filename, char *file2)
 	do {
 		countr = read(fd1, buf, BUF_SIZE);
 		if (countr < 0)
-			error_func(98);
+			error_func(98, filename);
 		if (write(fd2, buf, countr) < 0)
-			error_func(99);
+			error_func(99, file2);
 	} while (countr == BUF_SIZE);
-	if (close(fd1) < 0)
+	close(fd1);
+	close(fd2);
+	if (cfd1 < 0)
 		error_func(100, fd1);
-	if (close(fd2) < 0)
+	if (cfd2 < 0)
 		error_func(100, fd2);
 	free(buf);
 
