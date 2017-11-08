@@ -58,7 +58,7 @@ int creat_fil(char *filename)
 void txt_buf(char *filename, char *file2)
 {
 	int fd1 = 0, fd2 = 0, cfd1 = 0, cfd2 = 0;
-	int countr = 0, countw = 0;
+	int countr = 0;
 	char *buf = NULL;
 
 	buf = malloc(sizeof(char) * BUF_SIZE);
