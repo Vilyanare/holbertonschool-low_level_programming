@@ -30,39 +30,6 @@ void error_func(int error, ...)
 	va_end(a);
 }
 /**
- * txt_buf - reads from file1 and writes to file2
- * @filename: name of text file
- * @file2: file to write to
- */
-void txt_buf(char *filename, char *file2)
-{
-	int fd1 = 0, fd2 = 0;
-	int countr = 0;
-	char *buf = NULL;
-
-	buf = malloc(sizeof(char) * BUF_SIZE);
-	if (buf == NULL)
-		return;
-	fd1 = open(filename, O_RDONLY);
-	if (fd1 < 0)
-		error_func(98, filename);
-	fd2 = open(file2, O_WRONLY | O_APPEND);
-	if (fd2 < 0)
-		error_func(99, file2);
-	do {
-		countr = read(fd1, buf, BUF_SIZE);
-		if (countr < 0)
-			error_func(98);
-		if (write (fd2, buf, countr) < 0)
-			error_func(99);
-	} while (countr == BUF_SIZE);
-	if (close(fd1) < 0)
-		error_func(100, fd1);
-	if (close(fd2) < 0)
-		error_func(100, fd2);
-
-}
-/**
  * creat_fil - creates a file
  * @filename: name to give to file
  * Return: 1 on success -1 on failure
@@ -81,6 +48,40 @@ int creat_fil(char *filename)
 	return (1);
 }
 /**
+ * txt_buf - reads from file1 and writes to file2
+ * @filename: name of text file
+ * @file2: file to write to
+ */
+void txt_buf(char *filename, char *file2)
+{
+	int fd1 = 0, fd2 = 0;
+	int countr = 0;
+	char *buf = NULL;
+
+	buf = malloc(sizeof(char) * BUF_SIZE);
+	if (buf == NULL)
+		return;
+	fd1 = open(filename, O_RDONLY);
+	if (fd1 < 0)
+		error_func(98, filename);
+	creat_fil(file2);
+	fd2 = open(file2, O_WRONLY | O_APPEND);
+	if (fd2 < 0)
+		error_func(99, file2);
+	do {
+		countr = read(fd1, buf, BUF_SIZE);
+		if (countr < 0)
+			error_func(98);
+		if (write (fd2, buf, countr) < 0)
+			error_func(99);
+	} while (countr == BUF_SIZE);
+	if (close(fd1) < 0)
+		error_func(100, fd1);
+	if (close(fd2) < 0)
+		error_func(100, fd2);
+
+}
+/**
  * main - copies contents of file 1 to file 2
  * @argc: number of arguments
  * @argv: argv1 == file1 argv2 == file2
@@ -94,7 +95,6 @@ int main(int argc, char **argv)
 {
 	if (argc != 3)
 		error_func(97);
-	creat_fil(argv[2]);
 	txt_buf(argv[1], argv[2]);
 	return (0);
 }
