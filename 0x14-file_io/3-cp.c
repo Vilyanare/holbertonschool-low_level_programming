@@ -16,7 +16,7 @@ void error_func(int error, ...)
 	else if (error == 98)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file");
-		dprintf(STDERR_FILENO," %s\n", va_arg(a, char *));
+		dprintf(STDERR_FILENO, " %s\n", va_arg(a, char *));
 		exit(98);
 	}
 	else if (error == 99)
