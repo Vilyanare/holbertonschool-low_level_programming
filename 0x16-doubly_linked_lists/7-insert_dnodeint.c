@@ -15,14 +15,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	idxn = *h;
 	idxprev = *h;
-	while (idxn)
+	while (idxn && idx)
 	{
+		x++;
 		idxn = idxn->next;
 		if (x == idx)
 			break;
 		if (idxn)
 			idxprev = idxn;
-		x++;
 	}
 	if (x < idx)
 		return (NULL);
