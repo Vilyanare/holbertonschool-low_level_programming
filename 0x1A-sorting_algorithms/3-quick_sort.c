@@ -20,10 +20,10 @@ void swap_int(int *a, int *b)
  * @size: size of the whole array
  * Return: index of
  */
-int partition(int *array, int lo, int hi, size_t size)
+int partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	long int p = array[hi];
-	long int i = lo - 1, j = lo;
+	ssize_t p = array[hi];
+	ssize_t i = lo - 1, j = lo;
 
 	for (; j < hi; j++)
 	{
@@ -48,9 +48,9 @@ int partition(int *array, int lo, int hi, size_t size)
  * @hi: last index in array
  * @size: size of the whole array
  */
-void quicksort(int *array, int lo, int hi, size_t size)
+void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	int p = 0;
+	ssize_t p = 0;
 
 	if (lo < hi)
 	{
