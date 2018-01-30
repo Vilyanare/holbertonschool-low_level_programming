@@ -19,14 +19,11 @@ void swap_int(int *a, int *b)
  * @hi: last index of the array
  * Return: index of
  */
-int partition(int *array, int lo, int hi)
+int partition(int *array, int lo, int hi, size_t size)
 {
 	long int p = array[hi];
 	long int i = lo - 1, j = lo;
-	static int o_hi = 1;
 
-	if (o_hi < hi)
-		o_hi = hi + 1;
 	for (; j < hi; j++)
 	{
 		if (array[j] < p)
@@ -34,13 +31,13 @@ int partition(int *array, int lo, int hi)
 			i++;
 			swap_int(&array[i], &array[j]);
 			if (j != i)
-				print_array(array, o_hi);
+				print_array(array, size);
 		}
 	}
 	i++;
 	swap_int(&array[i], &array[hi]);
 	if (i != hi)
-		print_array(array, o_hi);
+		print_array(array, size);
 	return (i);
 }
 /**
@@ -49,15 +46,15 @@ int partition(int *array, int lo, int hi)
  * @lo: first index of array
  * @hi: last index in array
  */
-void quicksort(int *array, int lo, int hi)
+void quicksort(int *array, int lo, int hi, size_t size)
 {
 	int p = 0;
 
 	if (lo < hi)
 	{
-		p = partition(array, lo, hi);
-		quicksort(array, lo, p - 1);
-		quicksort(array, p + 1, hi);
+		p = partition(array, lo, hi, size);
+		quicksort(array, lo, p - 1, size);
+		quicksort(array, p + 1, hi, size);
 	}
 }
 /**
@@ -67,5 +64,5 @@ void quicksort(int *array, int lo, int hi)
  */
 void quick_sort(int *array, size_t size)
 {
-	quicksort(array, 0, size - 1);
+	quicksort(array, 0, size - 1, size);
 }
