@@ -1,35 +1,57 @@
 #include "sort.h"
 
 /**
- * print_func - function to help me print whole array
- * @array: array to print
- * @size: size of the array
- */
-void print_func(int *array, size_t size)
-{
-	static int *o_array = ((void *)0);
-	static size_t o_size = 1;
-
-	if (o_array == NULL)
-		o_array = array;
-	if (o_size == 1)
-		o_size = size;
-	print_array(o_array, o_size);
-}
-/**
  * swap_int - function to swap the int at two memory addresses and prints array
  * @a: first int
  * @b: second int
  * @array: array to print
  * @size: size of array
  */
-void swap_int(int *a, int *b, int *array, size_t size)
+void swap_int(int *a, int *b)
 {
 	int temp = *a;
 
 	*a = *b;
 	*b = temp;
-	print_func(array, size);
+}
+/**
+ * partition - splits an array into two arrays based on a pivot
+ * @array: array to be partitioned
+ * @size: size of the array
+ */
+int partition(int *array, int lo, int hi)
+{
+	int p = array[hi];
+	int i = lo - 1, j = lo;
+	static int o_hi = 1;
+
+	if (o_hi < hi)
+		o_hi = hi + 1;
+	for (; j < hi; j++)
+	{
+		if (array[j] < p)
+		{
+			i++;
+			swap_int(&array[i], &array[j]);
+			print_array(array, o_hi);
+		}
+	}
+	i++;
+	swap_int(&array[i], &array[hi]);
+	print_array(array, o_hi);
+	return (i);
+}
+
+void quicksort(int *array, int lo, int hi)
+{
+	int p = 0;
+
+	if (lo < hi)
+	{
+		p = partition(array, lo, hi);
+		quicksort(array, lo, p - 1);
+		quicksort(array, p + 1, hi);
+	}
 }
 /**
  * quick_sort - breaks an array into sections and sorts those sections
@@ -38,41 +60,5 @@ void swap_int(int *a, int *b, int *array, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	int pivot = 0;
-	size_t left = 0, right = size - 1;
-
-	if (array)
-	{
-		pivot = array[size - 1];
-		while (left < right - 1 && left != right)
-		{
-			while (array[left] <= pivot && left < right - 1)
-				left++;
-			while (array[right] >= pivot && right > left + 1)
-				right--;
-			if (array[left] > pivot && array[right] < pivot)
-				swap_int(&array[left], &array[right], array, size);
-		}
-		if (array[left] > pivot)
-		{
-			swap_int(&array[left], &array[size - 1], array, size);
-			if (left > 0 && size > 1)
-				quick_sort(&array[0], left);
-			if (size - right > 0 && size > 1)
-				quick_sort(&array[right], size - right);
-		}
-		else if (array[right] > pivot)
-		{
-			swap_int(&array[right], &array[size - 1], array, size);
-			if (right > 0 && size > 1)
-				quick_sort(&array[0], right);
-			if (size - right - 1 > 0 && size > 1)
-				quick_sort(&array[right + 1], size - right - 1);
-		}
-		else
-		{
-			if (left > 0)
-				quick_sort(&array[0], right);
-	}
-}
+	quicksort(array, 0, size - 1);
 }
