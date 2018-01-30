@@ -16,7 +16,8 @@ void swap_int(int *a, int *b)
  * partition - splits an array into two arrays based on a pivot
  * @array: array to be partitioned
  * @lo: starting index of the array
- * @hi: last index of the array
+ * @hi: last index of the
+ * @size: size of the whole array
  * Return: index of
  */
 int partition(int *array, int lo, int hi, size_t size)
@@ -45,6 +46,7 @@ int partition(int *array, int lo, int hi, size_t size)
  * @array: array to be sorted
  * @lo: first index of array
  * @hi: last index in array
+ * @size: size of the whole array
  */
 void quicksort(int *array, int lo, int hi, size_t size)
 {
