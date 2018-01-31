@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * shell_sort - sort an array of ints with the shell method with a gap
@@ -8,18 +9,25 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, i = 0, j = 0;
+	size_t gap = 1, i = 0, j = 0, o_g = 0;
 	int temp = 0, count = 0;
 
 	if (array && size != 1 && size != 0)
 	{
 		while (gap < size)
 		{
+			o_g = gap;
 			gap = gap * 3 + 1;
-			count++;
+			if (o_g > gap)
+			{
+				gap = o_g;
+				break;
+			}
+			else
+				count++;
 		}
-		gap = (gap - 1) / 3;
-
+		if (gap != o_g)
+			gap = (gap - 1) / 3;
 		while (count > 0)
 		{
 			for (i = 0; i < size; i++)
