@@ -22,23 +22,26 @@ void swap_int(int *a, int *b)
  */
 int partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	ssize_t p = array[hi];
-	ssize_t i = lo - 1, j = lo;
+	ssize_t p = array[hi], i = lo - 1, j = lo;
 
 	for (; j < hi; j++)
 	{
 		if (array[j] < p)
 		{
 			i++;
-			swap_int(&array[i], &array[j]);
 			if (j != i)
+			{
+				swap_int(&array[i], &array[j]);
 				print_array(array, size);
+			}
 		}
 	}
 	i++;
-	swap_int(&array[i], &array[hi]);
-	if (i != hi)
+	if (array[i] > p)
+	{
+		swap_int(&array[i], &array[hi]);
 		print_array(array, size);
+	}
 	return (i);
 }
 /**
@@ -66,5 +69,6 @@ void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	quicksort(array, 0, size - 1, size);
+	if (array != NULL)
+		quicksort(array, 0, size - 1, size);
 }
