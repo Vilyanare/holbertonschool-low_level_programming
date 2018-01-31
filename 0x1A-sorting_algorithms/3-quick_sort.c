@@ -66,6 +66,5 @@ void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array && size > 1)
-		quicksort(array, 0, size - 1, size);
+	quicksort(array, 0, size - 1, size);
 }
