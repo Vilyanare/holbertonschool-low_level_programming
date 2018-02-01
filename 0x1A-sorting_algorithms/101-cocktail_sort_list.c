@@ -16,7 +16,7 @@ void shake_left(listint_t **head, listint_t **end)
 			if (current->prev->prev == NULL)
 				*head = current;
 			if (current->next)
-				current->next->prev = current ->prev;
+				current->next->prev = current->prev;
 			current->prev->next = current->next;
 			current->next = current->prev;
 			current->prev = current->prev->prev;
@@ -63,7 +63,8 @@ int shake_right(listint_t **list)
 	return (f);
 }
 /**
- * cocktail_sort_list - sort a list by alternating forwards and backwards sorting
+ * cocktail_sort_list - sort a list by alternating forwards
+ * and backwards sorting
  * @list: list to be sorted
  */
 void cocktail_sort_list(listint_t **list)
