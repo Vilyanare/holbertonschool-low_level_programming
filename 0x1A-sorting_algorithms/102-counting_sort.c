@@ -1,4 +1,12 @@
 #include "sort.h"
+
+/**
+ * setup_temp - function to setup temp array for sorting function
+ * @temp: array to be setup
+ * @array: original array
+ * @size: size of original array
+ * @high: size of temp array
+ */
 void setup_temp(int *temp, int *array, size_t size, size_t high)
 {
 	size_t i = 0, x = 0;
@@ -23,12 +31,17 @@ void setup_temp(int *temp, int *array, size_t size, size_t high)
 		temp[i] = temp[i - 1];
 	}
 }
+/**
+ * counting_sort - sort using counting method
+ * @array: array to sort
+ * @size: size of array
+ */
 void counting_sort(int *array, size_t size)
 {
 	size_t i = 0, high = 0;
 	int *temp = NULL, *final = NULL;
 
-	if (!array)
+	if (array == NULL)
 		return;
 	for (; i < size; i++)
 	{
