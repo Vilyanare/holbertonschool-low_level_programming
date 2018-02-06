@@ -41,7 +41,7 @@ void counting_sort(int *array, size_t size)
 	size_t i = 0, high = 0;
 	int *temp = NULL, *final = NULL;
 
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
 	for (; i < size; i++)
 	{

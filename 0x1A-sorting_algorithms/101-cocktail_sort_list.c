@@ -2,8 +2,8 @@
 
 /**
  * shake_left - sorts a linked list moving backwards through the list
- * @list: pointer to head of the list
- * @current: pointer to end of list
+ * @head: pointer to head of the list
+ * @end: pointer to end of list
  */
 void shake_left(listint_t **head, listint_t **end)
 {
@@ -32,6 +32,7 @@ void shake_left(listint_t **head, listint_t **end)
 /**
  * shake_right - sorts a linked list moving forwards through the list
  * @list: pointer to head of list
+ * Return: 1 if a swap occured 0 if none occured
  */
 int shake_right(listint_t **list)
 {
