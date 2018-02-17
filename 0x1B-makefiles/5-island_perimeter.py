@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module containing the island_perimeter method"""
 
+
 def island_perimeter(grid):
     """Method to find the perimeter of a an island in grid
 
@@ -16,7 +17,7 @@ def island_perimeter(grid):
                 if num + 1 >= len(grid) or grid[num + 1][list_num] == 0:
                     count += 1
                 if list_num - 1 < 0 or grid[num][list_num - 1] == 0:
-                    count +=1
+                    count += 1
                 if list_num + 1 >= len(glist) or grid[num][list_num + 1] == 0:
                     count += 1
     return count
