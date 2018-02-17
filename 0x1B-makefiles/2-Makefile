@@ -6,7 +6,7 @@ NAME = holberton
 all : $(NAME)
 
 %.o: %.c m.h
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) -c -o $@ $<
 
 $(NAME) : $(OBJ)
 	$(CC) -o $@ $^
