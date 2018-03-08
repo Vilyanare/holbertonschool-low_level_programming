@@ -21,19 +21,19 @@ size_t rec_height(const binary_tree_t *tree)
  */
 int rec_full_height(const binary_tree_t *node)
 {
-	int left = 0, right = 0;
+	int left = 0, right = 0, lt = 1, rt = 1;
 
 	if (node->left)
 	{
 		left = rec_height(node->left);
-		rec_full_height(node->left);
+		lt = rec_full_height(node->left);
 	}
 	if (node->right)
 	{
 		right = rec_height(node->right);
-		rec_full_height(node->right);
+		rt = rec_full_height(node->right);
 	}
-	return ((right == left) ? 1 : 0);
+	return (((right == left) ? 1 : 0) & rt & lt);
 }
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
