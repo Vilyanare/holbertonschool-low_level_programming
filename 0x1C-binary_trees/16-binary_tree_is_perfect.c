@@ -1,5 +1,23 @@
 #include "binary_trees.h"
 /**
+ * power - raises n to the power of k
+ * @num: number to me raised
+ * @power: power to raise number to
+ * Return: result of n to the power of k
+ */
+size_t power(size_t num, size_t power)
+{
+	size_t x = 0, raised = num;
+
+	if (power == 0)
+		return (1);
+	for (x = 1; x < power; x++)
+	{
+		raised *= num;
+	}
+	return (raised);
+}
+/**
  * rec_size - recursively finds the size of a binary tree
  * @tree: binary tree to find size of
  * Return: size of the tree
@@ -17,19 +35,19 @@ size_t rec_size(const binary_tree_t *tree)
 	return (left + right);
 }
 /**
- * rec_full - check to see if a binary tree is full
- * @tree: tree to check if full
- * Return: 1 if full 0 otherwise
+ * rec_height - recursively finds the height of a binary tree
+ * @tree: binary tree to find height of
+ * Return: height of the tree
  */
-int rec_full(const binary_tree_t *tree)
+size_t rec_height(const binary_tree_t *tree)
 {
-	int left = 0, right = 0;
+	size_t left = 0, right = 0;
 
 	if (tree->left)
-		left = rec_full(tree->left);
+		left = rec_height(tree->left) + 1;
 	if (tree->right)
-		right = rec_full(tree->right);
-	return ((left == right) ? 1 : 0);
+		right = rec_height(tree->right) + 1;
+	return ((left > right) ? left : right);
 }
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
@@ -38,7 +56,15 @@ int rec_full(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	size_t x = 0, height = 0, perf_size = 0;
+
 	if (!tree)
 		return (0);
-	return (rec_full(tree) & (rec_size(tree->left) == rec_size(tree->right)));
+	height = rec_height(tree);
+	while (x <= height)
+	{
+		perf_size += power(2, height - x);
+		x++;
+	}
+	return (perf_size == rec_size(tree) + 1);
 }
