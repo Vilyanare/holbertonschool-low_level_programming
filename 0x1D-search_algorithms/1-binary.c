@@ -14,7 +14,7 @@ int binary_recurse(int *array, size_t low, size_t high, int value)
 	size_t mid = high - (high - low) / 2;
 	size_t x = 0, new_low = low, new_high = high;
 
-	printf("Searching in array :");
+	printf("Searching in array: ");
 	for (x = low; x < high; x++)
 		printf("%d,", array[x]);
 	printf("%d\n", array[high]);
