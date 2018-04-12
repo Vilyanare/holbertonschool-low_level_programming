@@ -1,5 +1,14 @@
 #include "search_algos.h"
 
+/**
+ * binary_recurse - Recursive helper to search an array
+ * A smaller array is created by sending new indexs to next recursion
+ * @array: pointer to array to be searched
+ * @low: bottom index of array
+ * @high: top index of array
+ * @value: value to search for
+ * Return: returns index of found value or -1 if not found
+ */
 int binary_recurse(int *array, size_t low, size_t high, int value)
 {
 	size_t mid = high - (high - low) / 2;
@@ -17,7 +26,7 @@ int binary_recurse(int *array, size_t low, size_t high, int value)
 	if (value > array[mid])
 		new_low = mid + 1;
 	if (value < array[mid])
-		new_high = mid -1;
+		new_high = mid - 1;
 
 	return (binary_recurse(array, new_low, new_high, value));
 
